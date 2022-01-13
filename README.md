@@ -60,10 +60,12 @@ Using curl or postman you can call the endpoints to populate the database
 ## add a quote
 http://localhost:3001/quotes/add
 The body or data needs to be with `Content-type: application/json`
-`{
+```
+{
 	"quote": "I can do this all day.",
 	"author": "Captain America",
 	"actor": "Chris Evans",
 	"movie_id": 1 /// this is optional
-}`
+}
+```
 
