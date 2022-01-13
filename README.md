@@ -30,6 +30,7 @@ create table movies(
 	name varchar(256) not null,
 	year date
 );
+```
 
 # Create a .env file
 - Create a `.env` file and populate it with your database connection info. See the pool.js file to env variables. Feel free to change them as you prefer. 
@@ -65,3 +66,4 @@ The body or data needs to be with `Content-type: application/json`
 	"actor": "Chris Evans",
 	"movie_id": 1 /// this is optional
 }`
+
