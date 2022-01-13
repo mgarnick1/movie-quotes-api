@@ -19,6 +19,8 @@ app.get("/", (req, res) => {
 
 app.get('/quotes', db.getQuotes)
 app.get('/quotes/:id', db.getQuoteById)
+app.post('/quotes/add', db.addQuote)
+app.post('/movie/add', db.addMovie)
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
