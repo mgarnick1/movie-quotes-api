@@ -22,7 +22,9 @@ create table movie_quotes(
 	id serial primary key not null,
 	quote varchar(1024) not null,
 	author varchar(64) not null,
-	actor varchar(64) not null
+	actor varchar(64) not null,
+	movie_id INT
+	constraint fk_movie_id foreign key(movie_id) references movies(id) ON DELETE SET null
 );
 
 create table movies(
