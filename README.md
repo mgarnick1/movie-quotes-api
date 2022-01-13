@@ -16,6 +16,21 @@ If you have not already installed postgresql please do the following:
 - Password is your psql username password. 
 - After completing this steps you have connected to an empty database. 
 
+You can update your database with the following tables:
+```
+create table movie_quotes(
+	id serial primary key not null,
+	quote varchar(1024) not null,
+	author varchar(64) not null,
+	actor varchar(64) not null
+);
+
+create table movies(
+	id serial primary key not null,
+	name varchar(256) not null,
+	year date
+);
+
 # Create a .env file
 - Create a `.env` file and populate it with your database connection info. See the pool.js file to env variables. Feel free to change them as you prefer. 
 
@@ -37,3 +52,15 @@ module.exports = {
   pool,
 };
 ```
+
+# Adding data to the database
+Using curl or postman you can call the endpoints to populate the database
+## add a quote
+http://localhost:3001/quotes/add
+The body or data needs to be with `Content-type: application/json`
+```{
+	"quote": "I can do this all day.",
+	"author": "Captain America",
+	"actor": "Chris Evans",
+	"movie_id": 1 /// this is optional
+}
