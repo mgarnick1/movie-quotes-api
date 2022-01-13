@@ -23,6 +23,7 @@ app.get('/movies', db.getAllMovies)
 app.post('/quotes/add', db.addQuote)
 app.post('/movie/add', db.addMovie)
 app.put('/quotes/:id', db.updateQuote)
+app.delete('/quotes/:id', db.deleteQuote)
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)

@@ -67,6 +67,16 @@ updateQuote = (req, res) => {
     })
 }
 
+deleteQuote = (req, res) => {
+    const id = +req.params.id
+    pool.query(quotes.deleteQuote, [id], (err, results) => {
+        if(err) {
+            throw err;
+        }
+        res.status(200).send(`Quote ID: ${id} was deleted`)
+    })
+}
+
 module.exports = {
   getQuotes,
   getQuoteById,
@@ -74,4 +84,5 @@ module.exports = {
   addMovie,
   getAllMovies,
   updateQuote,
+  deleteQuote
 };
