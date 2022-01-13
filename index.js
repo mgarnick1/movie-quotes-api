@@ -19,6 +19,7 @@ app.get("/", (req, res) => {
 
 app.get('/quotes', db.getQuotes)
 app.get('/quotes/:id', db.getQuoteById)
+app.get('/movies', db.getAllMovies)
 app.post('/quotes/add', db.addQuote)
 app.post('/movie/add', db.addMovie)
 

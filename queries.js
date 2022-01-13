@@ -47,9 +47,19 @@ addMovie = (req, res) => {
   });
 };
 
+getAllMovies = (req, res) => {
+  pool.query(movies.getAllMovies, (err, results) => {
+    if (err) {
+      throw err;
+    }
+    res.status(200).json(results.rows);
+  });
+};
+
 module.exports = {
   getQuotes,
   getQuoteById,
   addQuote,
   addMovie,
+  getAllMovies,
 };
