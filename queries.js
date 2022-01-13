@@ -56,10 +56,22 @@ getAllMovies = (req, res) => {
   });
 };
 
+updateQuote = (req, res) => {
+    const id = +req.params.id
+    const { quote, author, actor, movie_id } = req.body
+    pool.query(quotes.updateQuote, [quote, author, actor, movie_id, id], (err, results) => {
+        if(err) {
+            throw err;
+        }
+        res.status(200).send(`Quote ID: ${id} updated successfully`)
+    })
+}
+
 module.exports = {
   getQuotes,
   getQuoteById,
   addQuote,
   addMovie,
   getAllMovies,
+  updateQuote,
 };
