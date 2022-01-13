@@ -18,6 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.get('/quotes', db.getQuotes)
+app.get('/quotes/:id', db.getQuoteById)
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
